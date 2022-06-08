@@ -1,0 +1,92 @@
+#pylint:disable=W0621
+
+# assignment 7
+#Q 1 create vehicle class & colling method
+class vehicle:#parent class
+	def Vehicle_fun():
+		x = 8
+		print("       The parent class values is : ",x)
+class vehicleMethod(vehicle):
+	def vehicle_fun2():
+		print("          individual vehicle class of method :) ")
+		
+#colling of method class
+obj1=vehicleMethod
+print(obj1.Vehicle_fun())
+print(obj1.vehicle_fun2())
+
+#Q2 create a vehicle class & collling the method of class
+class vehicle_empty:
+	def intereste(self):
+		pass
+class car_charges(vehicle_empty):
+	def intereste(self):
+		print("        Car is too high interest :) ")
+	
+class bike_charges(vehicle_empty):
+	def intereste(slef):
+		print(".         bike is almost average interest :) " )
+	
+#create obj
+car=car_charges()
+bike=bike_charges()
+print(car.intereste())
+print(bike.intereste())
+
+#Q3 overloading 
+#Note overloading not possible in Python language
+class overloading:
+	def myfunction(self):
+		print("      parent class is here ")
+	
+class overloading1(overloading):
+	def myfunction(self):
+		print("      Child class is here No 1 ")
+
+class overloading2(overloading1):
+	def myfunction(self):
+		print("      Child class is here  No 2")
+		#overridding method 👇
+		#super().myfunction()
+
+obj2=overloading2()
+print(obj2.myfunction())
+
+#Q4 all the method of vehicle class inheritance in bus class
+class vehicle_method:#parent class
+	def size(self):
+		pass
+	def color(self):
+		pass
+class bus_method(vehicle_method):#child class
+		def size(self):
+			print("         Bus Size is 51 mtr :) ")
+			
+		def color(self):
+			print("        Bus Color is Sky-Blue :) ")
+	
+#creare a object for child class
+obj3=bus_method()
+print(obj3.size())
+print(obj3.color())
+
+#Q5  Overridding in python
+class vehicle1:
+	def myfunction(self,a):
+		print(".        This section is a parent class of Overridding method :) ",a)
+class bus1(vehicle1):
+	def myfunction(self,a):
+		print(".        This section is a Child class of Overridding method :) 1 ",a)
+		#uuper wale class ko get karne ke kily super() method ka use krna parta hai
+		super().myfunction(30)
+
+class car1(bus1):
+	def myfunction(self,a):
+		print(".        This section is a Child class of Overridding method :) 2",a)
+		#uuper wale class ko get karne ke kily super() method ka use krna parta hai
+		super().myfunction(20)
+	
+obj4=car1()
+print(obj4.myfunction(10))
+
+
